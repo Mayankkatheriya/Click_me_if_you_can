@@ -40,7 +40,7 @@ body{
   padding: 16px 24px;
   text-align: center;
   text-decoration: none;
-  transition: all 0.5s cubic-bezier(.23, 1, 0.32, 1);
+  transition: all 0.03s cubic-bezier(.23, 1, 0.32, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -163,7 +163,16 @@ body{
    clip: rect(0, 900px, 0, 0);
    animation: noise-after 2s infinite linear alternate-reverse;
 }
-
+.timer{
+   position: absolute;
+   top: 0;
+   left: 10px;
+   font-weight: 500;
+   color: green;
+   font-size: 5rem;
+   transition: all 1s ease-in-out;
+   display: none;
+}
 @keyframes noise-before {
    0% {
       clip: rect(61px, 9999px, 52px, 0);

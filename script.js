@@ -2,6 +2,8 @@ let box = document.querySelector('.catch');
 let playBtn = document.querySelector(".play");
 let start = document.querySelector(".start");
 let restart = document.querySelector(".restart");
+let timer = document.querySelector(".timer")
+console.log(restart.children[0].innerHTML);
 function randomPos(min, max){
     min = Math.ceil(min) 
     max = Math.floor(max)
@@ -16,18 +18,56 @@ box.addEventListener("mouseover" , ()=>{
     left = randomPos(boxWidth, (screenWidth-boxWidth)) + "px"
     up = randomPos(boxHeight, (screenHeight-boxHeight))+ "px"
     box.style.left = left
-    box.style.top = up
+    box.style.top = up;
+
 })
 playBtn.addEventListener("click", ()=>{
     box.style.display = "block";
     start.style.display = "none"
+    timer.style.display = "block"
+    setInterval(updateTimer, 1000)
+    let countdown=30;
+    function updateTimer(){
+        countdown--;
+        timer.innerText = countdown;
+        if(countdown==0){
+            box.style.display = "none";
+            restart.style.display = "flex";
+            timer.style.display = "none"
+            restart.children[0].innerHTML = `You Lose`
+        }
+    }
 })
 box.addEventListener("click", ()=>{
     box.style.display = "none";
     restart.style.display = "flex";
+    timer.style.display = "none"
+    if(parseInt(timer.innerText)<=20 && parseInt(timer.innerText)>10){
+        restart.children[0].innerHTML = `Great!! <br>But You Can Do Better`
+    }
+    if(parseInt(timer.innerText)<=10 && parseInt(timer.innerText)>0){
+        restart.children[0].innerHTML = `Nice <br>You Are a survivor`
+    }
 })
 
-
+// let seconds = 0;
+//         let minutes = 0;
+//         let hours = 0;
+//         let timer = document.getElementById('timer')
+//         function startStopWatch(){
+//             setInterval(updateStopWatch, 1000)
+//         }
+//         function updateStopWatch() {
+//             seconds++;
+//             if(seconds===60){
+//                 minutes++;
+//                 seconds=0;
+//                 if(minutes===60){
+//                     hours++;
+//                     minutes=0;
+//                 }
+//             }
+//             timer.innerText=`${hours} hr : ${minutes} min : ${seconds} sec`;
 // var viewWidth = window.innerWidth;
 // var viewHeight = window.innerHeight;
 

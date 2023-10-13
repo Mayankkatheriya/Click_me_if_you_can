@@ -3,6 +3,7 @@ let playBtn = document.querySelector(".play");
 let start = document.querySelector(".start");
 let restart = document.querySelector(".restart");
 let timer = document.querySelector(".timer")
+let tag = document.querySelector("#tag")
 console.log(restart.children[0].innerHTML);
 function randomPos(min, max){
     min = Math.ceil(min) 
@@ -46,12 +47,14 @@ playBtn.addEventListener("click", ()=>{
     box.style.display = "block";
     start.style.display = "none";
     timer.style.display = "block";
+    tag.style.display = "none"
     watchStart()
 })
 box.addEventListener("click", ()=>{
     box.style.display = "none";
     restart.style.display = "flex";
     timer.style.display = "none"
+    tag.style.display = "block"
     watchStop();
     if(parseInt(timer.innerText)<=20 && parseInt(timer.innerText)>10){
         restart.children[0].innerHTML = `Great!! <br>But You Can Do Better`

@@ -43,4 +43,4 @@ The page structure includes:
 * The message in the "Restart" section is updated based on the time remaining.
 * There is some commented-out code, likely for a stopwatch functionality and random button repositioning, which is not currently used in the game.
   
-In summary, your code creates a simple web-based game where players must click the "Catch" button within 30 seconds after clicking "Play Now." The game features some visually appealing CSS effects, including glitch text and button animations. Players receive different messages based on their remaining time when they click the "Catch" button. There's also some commented-out code that appears to be for additional functionality.
+In summary, This code creates a simple web-based game where players must click the "Catch" button within 30 seconds after clicking "Play Now." The game features some visually appealing CSS effects, including glitch text and button animations. Players receive different messages based on their remaining time when they click the "Catch" button. There's also some commented-out code that appears to be for additional functionality.

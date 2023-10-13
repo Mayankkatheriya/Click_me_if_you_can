@@ -21,27 +21,38 @@ box.addEventListener("mouseover" , ()=>{
     box.style.top = up;
 
 })
+let countDown = 30;
+let watch =null;
+function updateTimer(){
+    countDown--;
+    timer.innerText = countDown;
+    if(countDown==0){
+        box.style.display = "none";
+        restart.style.display = "flex";
+        timer.style.display = "none"
+        restart.children[0].innerHTML = `You Lose`
+    }
+}
+function watchStart() {
+    if(watch!==null){
+        clearInterval(watch)
+    }
+    watch=setInterval(updateTimer,1000)
+}
+function watchStop() {
+    clearInterval(watch)
+}
 playBtn.addEventListener("click", ()=>{
     box.style.display = "block";
-    start.style.display = "none"
-    timer.style.display = "block"
-    setInterval(updateTimer, 1000)
-    let countdown=30;
-    function updateTimer(){
-        countdown--;
-        timer.innerText = countdown;
-        if(countdown==0){
-            box.style.display = "none";
-            restart.style.display = "flex";
-            timer.style.display = "none"
-            restart.children[0].innerHTML = `You Lose`
-        }
-    }
+    start.style.display = "none";
+    timer.style.display = "block";
+    watchStart()
 })
 box.addEventListener("click", ()=>{
     box.style.display = "none";
     restart.style.display = "flex";
     timer.style.display = "none"
+    watchStop();
     if(parseInt(timer.innerText)<=20 && parseInt(timer.innerText)>10){
         restart.children[0].innerHTML = `Great!! <br>But You Can Do Better`
     }

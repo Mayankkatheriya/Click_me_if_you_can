@@ -31,6 +31,7 @@ function updateTimer(){
         box.style.display = "none";
         restart.style.display = "flex";
         timer.style.display = "none"
+        tag.style.display = "block"
         restart.children[0].innerHTML = `You Lose`
     }
 }

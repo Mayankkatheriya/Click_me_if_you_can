@@ -2,8 +2,9 @@
 ## Hosted Link: [→ Click Me ←](https://mayankkatheriya.github.io/Click_me_if_you_can/)
 
 # UI:
+![image](https://github.com/Mayankkatheriya/Click_me_if_you_can/assets/128832286/10476158-fb54-4ffe-aae2-0ebe69dae1ec)
 
-
+---
 ## Explanation:
 
 `HTML (index.html)`:

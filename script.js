@@ -57,11 +57,16 @@ box.addEventListener("click", ()=>{
     timer.style.display = "none"
     tag.style.display = "block"
     watchStop();
+    if(parseInt(timer.innerText)<=30 && parseInt(timer.innerText)>20){
+        restart.children[0].innerHTML = `Woahh!! <br>That's really Fast<br><span class="catchTime">Catch Time: ${30-countDown}s</span>`
+    }
     if(parseInt(timer.innerText)<=20 && parseInt(timer.innerText)>10){
-        restart.children[0].innerHTML = `Great!! <br>But You Can Do Better`
+        restart.children[0].innerHTML = `
+        Great!! <br>But You Can Do Better<br><span class="catchTime">Catch Time: ${30-countDown}s</span>
+        `
     }
     if(parseInt(timer.innerText)<=10 && parseInt(timer.innerText)>0){
-        restart.children[0].innerHTML = `Nice <br>You Are a survivor`
+        restart.children[0].innerHTML = `Nice <br>You Are a survivor<span class="catchTime">Catch Time: ${30-countDown}s</span>`
     }
 })
 

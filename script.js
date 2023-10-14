@@ -69,7 +69,7 @@ box.addEventListener("click", () => {
         `;
   }
   if (parseInt(timer.innerText) <= 10 && parseInt(timer.innerText) > 0) {
-    restart.children[0].innerHTML = `Nice <br>You Are a survivor<span class="catchTime">Catch Time: ${
+    restart.children[0].innerHTML = `Nice <br>You Are a survivor<br><span class="catchTime">Catch Time: ${
       30 - countDown
     }s</span>`;
   }

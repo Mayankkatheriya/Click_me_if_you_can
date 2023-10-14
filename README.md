@@ -1,5 +1,5 @@
 # Click_me_if_you_can
-## Hosted Link: [→ Click Me ←](https://mayankkatheriya.github.io/Click_me_if_you_can/)
+## Play: [→ Click Me ←](https://mayankkatheriya.github.io/Click_me_if_you_can/)
 
 # UI:
 ![image](https://github.com/Mayankkatheriya/Click_me_if_you_can/assets/128832286/2ef84bd6-5e4c-446d-b5a1-a8a75856beae)

@@ -1,8 +1,8 @@
 # Click_me_if_you_can
-## Hosted Link: [→ Click Me ←](https://mayankkatheriya.github.io/Click_me_if_you_can/)
+## Start Play: [→ Click Me ←](https://mayankkatheriya.github.io/Click_me_if_you_can/)
 
 # UI:
-![image](https://github.com/Mayankkatheriya/Click_me_if_you_can/assets/128832286/10476158-fb54-4ffe-aae2-0ebe69dae1ec)
+![image](https://github.com/Mayankkatheriya/Click_me_if_you_can/assets/128832286/2ef84bd6-5e4c-446d-b5a1-a8a75856beae)
 
 ---
 ## Explanation:
@@ -10,7 +10,7 @@
 `HTML (index.html)`:
 
 * The HTML file defines the basic structure of your webpage.
-* It includes meta tags for character set and viewport settings.
+* It includes meta tags for the character set and viewport settings.
 * The title is set to "Click Me If You Can."
 * External CSS styles are linked from "./styles.css."
 * A favicon is linked with a URL of "./red-and-black-wings-with-x-gaming-logo-png-21.png."

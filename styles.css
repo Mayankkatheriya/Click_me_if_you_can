@@ -57,7 +57,7 @@ span a:hover {
   padding: 16px 24px;
   text-align: center;
   text-decoration: none;
-  transition: all 0.03s cubic-bezier(.23, 1, 0.32, 1);
+  transition: all 0.15s cubic-bezier(.23, 1, 0.32, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;

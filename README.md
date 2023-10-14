@@ -10,7 +10,7 @@
 `HTML (index.html)`:
 
 * The HTML file defines the basic structure of your webpage.
-* It includes meta tags for character set and viewport settings.
+* It includes meta tags for the character set and viewport settings.
 * The title is set to "Click Me If You Can."
 * External CSS styles are linked from "./styles.css."
 * A favicon is linked with a URL of "./red-and-black-wings-with-x-gaming-logo-png-21.png."

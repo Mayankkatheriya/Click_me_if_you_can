@@ -1,74 +1,79 @@
-let box = document.querySelector('.catch');
+let box = document.querySelector(".catch");
 let playBtn = document.querySelector(".play");
 let start = document.querySelector(".start");
 let restart = document.querySelector(".restart");
-let timer = document.querySelector(".timer")
-let tag = document.querySelector("#tag")
+let timer = document.querySelector(".timer");
+let tag = document.querySelector("#tag");
 console.log(restart.children[0].innerHTML);
-function randomPos(min, max){
-    min = Math.ceil(min) 
-    max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min)) + min;
+function randomPos(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
 }
-box.addEventListener("mouseover" , ()=>{
-    let screenHeight = window.innerHeight;
-    let screenWidth = window.outerWidth;
-    console.log(screenHeight, screenWidth);
-    let boxHeight = box.offsetHeight;
-    let boxWidth = box.offsetWidth;
-    left = randomPos(boxWidth, (screenWidth-boxWidth)) + "px"
-    up = randomPos(boxHeight, (screenHeight-boxHeight))+ "px"
-    box.style.left = left
-    box.style.top = up;
-
-})
+box.addEventListener("mouseover", () => {
+  let screenHeight = window.innerHeight;
+  let screenWidth = window.outerWidth;
+  console.log(screenHeight, screenWidth);
+  let boxHeight = box.offsetHeight;
+  let boxWidth = box.offsetWidth;
+  left = randomPos(boxWidth, screenWidth - boxWidth) + "px";
+  up = randomPos(boxHeight, screenHeight - boxHeight) + "px";
+  box.style.left = left;
+  box.style.top = up;
+});
 let countDown = 30;
-let watch =null;
-function updateTimer(){
-    countDown--;
-    timer.innerText = countDown;
-    if(countDown==0){
-        box.style.display = "none";
-        restart.style.display = "flex";
-        timer.style.display = "none"
-        tag.style.display = "block"
-        restart.children[0].innerHTML = `You Lose`
-    }
-}
-function watchStart() {
-    if(watch!==null){
-        clearInterval(watch)
-    }
-    watch=setInterval(updateTimer,1000)
-}
-function watchStop() {
-    clearInterval(watch)
-}
-playBtn.addEventListener("click", ()=>{
-    box.style.display = "block";
-    start.style.display = "none";
-    timer.style.display = "block";
-    tag.style.display = "none"
-    watchStart()
-})
-box.addEventListener("click", ()=>{
+let watch = null;
+function updateTimer() {
+  countDown--;
+  timer.innerText = countDown;
+  if (countDown == 0) {
     box.style.display = "none";
     restart.style.display = "flex";
-    timer.style.display = "none"
-    tag.style.display = "block"
-    watchStop();
-    if(parseInt(timer.innerText)<=30 && parseInt(timer.innerText)>20){
-        restart.children[0].innerHTML = `Woahh!! <br>That's really Fast<br><span class="catchTime">Catch Time: ${30-countDown}s</span>`
-    }
-    if(parseInt(timer.innerText)<=20 && parseInt(timer.innerText)>10){
-        restart.children[0].innerHTML = `
-        Great!! <br>But You Can Do Better<br><span class="catchTime">Catch Time: ${30-countDown}s</span>
-        `
-    }
-    if(parseInt(timer.innerText)<=10 && parseInt(timer.innerText)>0){
-        restart.children[0].innerHTML = `Nice <br>You Are a survivor<span class="catchTime">Catch Time: ${30-countDown}s</span>`
-    }
-})
+    timer.style.display = "none";
+    tag.style.display = "block";
+    restart.children[0].innerHTML = `You Lose`;
+  }
+}
+function watchStart() {
+  if (watch !== null) {
+    clearInterval(watch);
+  }
+  watch = setInterval(updateTimer, 1000);
+}
+function watchStop() {
+  clearInterval(watch);
+}
+playBtn.addEventListener("click", () => {
+  box.style.display = "block";
+  start.style.display = "none";
+  timer.style.display = "block";
+  tag.style.display = "none";
+  watchStart();
+});
+box.addEventListener("click", () => {
+  box.style.display = "none";
+  restart.style.display = "flex";
+  timer.style.display = "none";
+  tag.style.display = "block";
+  watchStop();
+  if (parseInt(timer.innerText) <= 30 && parseInt(timer.innerText) > 20) {
+    restart.children[0].innerHTML = `Woahh!! <br>That's really Fast<br><span class="catchTime">Catch Time: ${
+      30 - countDown
+    }s</span>`;
+  }
+  if (parseInt(timer.innerText) <= 20 && parseInt(timer.innerText) > 10) {
+    restart.children[0].innerHTML = `
+        Great!! <br>But You Can Do Better<br><span class="catchTime">Catch Time: ${
+          30 - countDown
+        }s</span>
+        `;
+  }
+  if (parseInt(timer.innerText) <= 10 && parseInt(timer.innerText) > 0) {
+    restart.children[0].innerHTML = `Nice <br>You Are a survivor<span class="catchTime">Catch Time: ${
+      30 - countDown
+    }s</span>`;
+  }
+});
 
 // let seconds = 0;
 //         let minutes = 0;
@@ -91,22 +96,19 @@ box.addEventListener("click", ()=>{
 // var viewWidth = window.innerWidth;
 // var viewHeight = window.innerHeight;
 
-
 // btn.addEventListener("mouseover", function(event) {
 //     var btnAttr = btn.getBoundingClientRect();
 //     console.log(btnAttr);
-    
+
 //     var pos = getNewPosition(btnAttr.width, btnAttr.height);
 //     console.log(pos);
-    
+
 //     btn.style.top = pos.y + "px";
 //     btn.style.left = pos.x + "px";
 // });
 
-
-
 // function getNewPosition(btnWidth, btnHeight) {
-    
+
 //     // The btnWidth and btnHeight are subtracted so that they would not move out from the right and bottom direction
 //     var newX = Math.floor((Math.random() * viewWidth)  - btnWidth);
 //     var newY = Math.floor((Math.random() * viewHeight)  - btnHeight);
@@ -120,7 +122,7 @@ box.addEventListener("click", ()=>{
 //     if(newY < 0) {
 //         newY = 0;
 //     }
-    
+
 //     return {x: newX, y: newY};
 //      console.log(newX);
 //     console.log(newY);
